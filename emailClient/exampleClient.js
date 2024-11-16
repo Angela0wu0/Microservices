@@ -16,17 +16,19 @@ async function main() {
       "body":"hello world!"
   }
   var userObj1 = {
-    "id":"test",
+    "id":"test1",
     "to":"test@email.com",
     "from":"test@email.com",
     "subject":"test",
     "body":"hello world 2!"
   }
 
-  //convert to readable string format
- 
+  //if you have more than one object combine them into one
   var allObj = {userObj, userObj1};
-  const keys = Object.keys(allObj);
+  //this sets the amount of total obj so that the loop can iterate through
+  const numItems = Object.keys(allObj);
+
+  //counter
   let i = 0;
 
   //socket
@@ -36,15 +38,15 @@ async function main() {
   console.log('Client connected to port 3000');
 
 
-  while(i < keys.length){
-    const key = keys[i];
+  while(i < numItems.length){
+    const key = numItems[i];
     const value = allObj[key];
 
     var string = JSON.stringify(value)
     //sent to emailClient
 
     await sock.send([string]);
-    await sleep(3000);
+    await sleep(4000);
     //recieve response from emailmicro
     const response = await sock.receive();
     console.log(response.toString());

@@ -28,7 +28,6 @@ async function main() {
     //wait for requests
     for await (const [msg] of sock) {
         //save .JSON data
-      
         const retrievedData =  JSON.parse(msg.toString());
         
         //extract specific data and stored to corresponding const vars
@@ -40,11 +39,13 @@ async function main() {
        
 
         //call function to send the email
-
         emailSender(requestID, email, myContact, subject, response);
         
-        await sleep(8000);
+        //equivalent to python time.sleep function
+        //you can choose to change the wait time in ms 
+        await sleep(2000);
 
+        //response to client
         await sock.send(`Email sent to <${requestID}>, check log for more details...`);}
     
 }
@@ -108,15 +109,19 @@ function emailSender(ID, to, from, subject, response){
     });
 }
 
+//log information by appending to file 
 function createLog(messageID, email) {
     const timestamp = new Date().toISOString(); 
 
     fs.appendFile('emailLog.txt', `${timestamp}: <${messageID}> EMAILURL: ${email}\n`, (err) => {
+        
         if (err) {
             console.error(err);
             return;
         }
-        console.log('File written successfully.');
+
+        console.log(`<${messageID}>: has been logged`);
+
     });
     
 
