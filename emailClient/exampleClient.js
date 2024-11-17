@@ -17,9 +17,9 @@ async function main() {
   }
   var userObj1 = {
     "id":"test1",
-    "to":"test@email.com",
-    "from":"test@email.com",
-    "subject":"test",
+    "to":"tes1@email.com",
+    "from":"test1@email.com",
+    "subject":"test1",
     "body":"hello world 2!"
   }
 
