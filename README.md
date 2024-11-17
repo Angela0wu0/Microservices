@@ -57,7 +57,9 @@ Now that the socket is set up to be connected to the Microservice to REQUEST dat
 
 
 ### Programmatically RECEIVE ###
-It is important to understand in a server and client ZeroMQ socket pattern that the client side must wait and recieve a data back before a new request can be made.
+It is important to understand in a server and client ZeroMQ socket pattern that the client side must wait and recieve a data back before a new request can be made with await keyword.
+
+**Javascript example call to receive:**
 ```
      async function main() {
         //create socket and await connect to port...
@@ -71,7 +73,7 @@ It is important to understand in a server and client ZeroMQ socket pattern that 
         //wait for function from Microservice to process...
         await sleep(4000); 
 
-        //recieve data from Microservice and store into const variable
+        //await recieve data from Microservice and store into const variable
         const response = await sock.recieve();
 
         //display to console...
@@ -79,6 +81,6 @@ It is important to understand in a server and client ZeroMQ socket pattern that 
      }
 ```
 
-
+##Sequence UML Diagram##
 
 ![Alt text](images/sequenceUML.png)
