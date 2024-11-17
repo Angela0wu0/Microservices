@@ -1,11 +1,11 @@
-# READ ME
+# READ ME #
 
-## Things To Know First 
+## Things To Know First ##
 The Email Microservice utalize ZeroMQ Socket API where the built-in Request-reply ZeroMQ pattern is used. The Microservice is the server that creates a zmq.Reply() socket that is binded to a TCP Port.  
 
-## How To Programmatically REQUEST and RECEIVE Data From Microservice
+## How To Programmatically REQUEST and RECEIVE Data From Microservice ##
 
-### Programmatically REQUEST
+### Programmatically REQUEST ###
 In order to be able to programmatically REQUEST Data you **MUST** first create a zmq.Request() socket that connects to the port the Microservice is binded too in a async function. It is also **important** to note when connecting the socket to the Microservice socket that it uses the keyword **await**. This is also nessesary when either sending and requesting data.
 
 **Javascript example:**
@@ -56,7 +56,7 @@ Now that the socket is set up to be connected to the Microservice to REQUEST dat
 ```
 
 
-### Programmatically RECEIVE
+### Programmatically RECEIVE ###
 It is important to understand in a server and client ZeroMQ socket pattern that the client side must wait and recieve a data back before a new request can be made.
 ```
      async function main() {
