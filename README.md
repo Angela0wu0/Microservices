@@ -80,7 +80,13 @@ It is important to understand in a server and client ZeroMQ socket pattern that 
         console.log(response);
      }
 ```
+## Email Log ##
+This microservice also appends to a ```emailLog.txt``` and records the timestamp of when the email was sent, the message ID of the email, and followed by the URL to the email that was sent. To access use file read functions of your program language. 
 
+**Example Call(JavaScript)**
+```
+    fs.readFile('C:\path\to\file.txt')'utf8', (err, data) => { //if statments....});
+```
 ## Sequence UML Diagram ##
 
 ![Alt text](images/sequenceUML.png)
