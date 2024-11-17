@@ -81,6 +81,6 @@ It is important to understand in a server and client ZeroMQ socket pattern that 
      }
 ```
 
-##Sequence UML Diagram##
+## Sequence UML Diagram ##
 
 ![Alt text](images/sequenceUML.png)
