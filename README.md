@@ -1,13 +1,14 @@
+import '@github/clipboard-copy-element'
 READ ME
 
-This is an Email Microservices that can:
-    - send email
-    - log when email was sent and URL link to content
+This is an Email Microservices that can: \n
+    - send email \n
+    - log when email was sent and URL link to content  \n \n
 
-The zmq library has already been added into this folder so just make sure to copy the folder to your workspace.
-Things to download in cmd:
- - npm install //node package manager
- - npm install nodemailer  //email system
+The zmq library has already been added into this folder so just make sure to copy the folder to your workspace. \n
+Things to download in cmd: \n
+ - npm install //node package manager \n
+ - npm install nodemailer  //email system \n
  
  
 In order for the email to be sent the JSON obj must be in the format of:
