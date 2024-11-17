@@ -1,4 +1,3 @@
-import '@github/clipboard-copy-element'
 READ ME
 
 This is an Email Microservices that can: \n
